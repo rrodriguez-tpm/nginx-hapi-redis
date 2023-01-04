@@ -5,6 +5,7 @@ EMAIL=$2
 
 echo DOMAIN=${DOMAIN} >> .env
 echo EMAIL=${EMAIL} >> .env
+CWD=$(pwd)
 
 # Phase 1
 docker-compose -f ./docker-compose-initiate.yaml up -d nginx
