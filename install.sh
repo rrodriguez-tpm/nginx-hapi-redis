@@ -14,6 +14,7 @@ docker-compose -f ./docker-compose-initiate.yaml down
 echo 'Starting some configurations for lets encrypt'
 # some configurations for let's encrypt
 curl -L --create-dirs -o etc/letsencrypt/options-ssl-nginx.conf https://raw.githubusercontent.com/certbot/certbot/master/certbot-nginx/>openssl dhparam -out etc/letsencrypt/ssl-dhparams.pem 2048
+openssl dhparam -out etc/letsencrypt/ssl-dhparams.pem 2048
 
 # Phase 2
 crontab ./etc/crontab
