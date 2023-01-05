@@ -1,3 +1,2 @@
 # m h  dom mon dow   command
-CWD=$(pwd)
 0 5  * * *  $CWD/cron_job.sh
