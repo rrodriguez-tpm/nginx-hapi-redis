@@ -1,2 +1,2 @@
 # m h  dom mon dow   command
-0 5  * * *  $CWD/cron_job.sh
+0 5  * * *  /home/touchpointmed/nginx-hapi-redis/cron_job.sh
