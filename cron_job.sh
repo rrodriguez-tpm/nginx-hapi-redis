@@ -8,6 +8,9 @@ else
         docker rm $EXITED_CONTAINERS
 fi
 
+CWD=$(pwd)
+echo $CWD
+
 # renew certbot certificate
-docker-compose -f /home/touchpointmed/nginx-hapi-redis/docker-compose.yaml run --rm certbot
-docker-compose -f /home/touchpointmed/nginx-hapi-redis/docker-compose.yaml exec nginx nginx -s reload
+docker-compose -f $CWD/docker-compose.yaml run --rm certbot
+docker-compose -f $CWD/docker-compose.yaml exec nginx nginx -s reload
