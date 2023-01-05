@@ -1,7 +1,8 @@
 #!/bin/bash
 # takes two paramters, the domain name and the email to be associated with the certificate
-DOMAIN=$1
-EMAIL=$2
+USER=$1
+DOMAIN=$2
+EMAIL=$3
 
 echo DOMAIN=${DOMAIN} >> .env
 echo EMAIL=${EMAIL} >> .env
@@ -17,6 +18,6 @@ curl -L --create-dirs -o etc/letsencrypt/options-ssl-nginx.conf https://raw.gith
 openssl dhparam -out etc/letsencrypt/ssl-dhparams.pem 2048
 
 # Phase 2
-crontab ./etc/crontab
+crontab -u $USER ./etc/crontab
 docker-compose -f ./docker-compose.yaml up -d
 
