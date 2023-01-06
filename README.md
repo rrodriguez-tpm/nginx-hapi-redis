@@ -1,7 +1,7 @@
 # **nginx-hapi-redis**
 This is a hapi.js web-app and ancillary files that can be used as a template to obtain a valid certificate using certbot in an automated way.
 
-This solution contains two phases:
+This solution contains two phases. Phase 1 obtains a valid certificate the first time and places it in a folder accessible to 
 
 **Phase 1:**
     <ul>
@@ -41,14 +41,14 @@ d65ae6f97798   nginx-hapi-redis_web   "docker-entrypoint.s…"   22 hours ago   
 
 ### Confirm that the cron job has been created:
 ```
-touchpointmed@ubuntuVM:~/nginx-hapi-redis$ crontab -l
+crontab -l
 # m h  dom mon dow   command
 0 5  * * *  /home/touchpointmed/nginx-hapi-redis/cron_job.sh
 ```
 
 ### To shutdown the application:
 ```
-touchpointmed@ubuntuVM:~/nginx-hapi-redis$ docker-compose -f ./docker-compose.yaml down
+docker-compose -f ./docker-compose.yaml down
 ```
 
 ### Remove the cron job:
@@ -65,9 +65,9 @@ sudo ./install.sh $USER mydomain.com user@email.com
 ```
 ### To update a new version of your web-app, start by stopping the containers:
 ```
-touchpointmed@ubuntuVM:~/nginx-hapi-redis$ docker-compose -f ./docker-compose.yaml down
+docker-compose -f ./docker-compose.yaml down
 ```
 ### Deploy the new images and start the web-app:
 ```
-touchpointmed@ubuntuVM:~/nginx-hapi-redis$ docker-compose -f ./docker-compose.yaml up -d
+docker-compose -f ./docker-compose.yaml up -d
 ```
