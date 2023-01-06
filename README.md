@@ -63,7 +63,7 @@ crontab -r
 ```bash
 sudo ./install.sh $USER mydomain.com user@email.com
 ```
-### To update web-app, stop the containers:
+### To update a new version of your web-app, start by stopping the containers:
 ```
 touchpointmed@ubuntuVM:~/nginx-hapi-redis$ docker-compose -f ./docker-compose.yaml down
 ```
